@@ -1,5 +1,5 @@
 {
-  "name": "develable-notice",
+  "name": "@develable/develable-notice",
   "version": "1.0.0",
   "scripts": {
     "WebStart": "node ./src/ExpressWeb/bin/www",
