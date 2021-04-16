@@ -1,0 +1,40 @@
+{
+  "name": "develable-notice",
+  "version": "1.0.0",
+  "scripts": {
+    "WebStart": "node ./src/ExpressWeb/bin/www",
+    "start": "electron ./src/main.js",
+    "build": "electron-packager ./ develable-notice --platform=win32 --arch=x64 --asar --icon=develable_logo.ico"
+  },
+  "dependencies": {
+    "asar": "^2.1.0",
+    "bufferutil": "^4.0.1",
+    "cookie-parser": "^1.4.4",
+    "debug": "^2.6.9",
+    "discord.js": "^11.6.1",
+    "ejs": "^2.6.2",
+    "electron": "^8.0.2",
+    "erlpack": "github:hammerandchisel/erlpack",
+    "express": "^4.16.4",
+    "http": "0.0.0",
+    "http-errors": "^1.6.3",
+    "md5": "^2.2.1",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
+    "store": "^2.0.12",
+    "url": "^0.11.0"
+  },
+  "main": "src/main.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/develable/Develable-notice.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/develable/Develable-notice/issues"
+  },
+  "homepage": "https://github.com/develable/Develable-notice#readme",
+  "description": ""
+}

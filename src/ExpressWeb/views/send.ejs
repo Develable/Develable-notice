@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <title>Develable 통합 공지 시스템 - 공지 발신</title>
+      <link rel="shortcut icon" href="/images/Logo_Develable.jpg">
+      <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+      <link href="/stylesheets/sendPage.css" rel="stylesheet">
+      <link href="/stylesheets/sb-admin-2.min.css" rel="stylesheet">
+      <link href="/stylesheets/demo.css" rel="stylesheet">
+  </head>
+  <body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+      <div id="myside">
+        <ul class="navbar-nav sidebar-dark accordion" id="accordionSidebar">
+          <a class="sidebar-brand d-flex align-items-center justify-content-center" id="mylogo" href="http://develable.xyz/">
+            <div class="sidebar-brand-icon rounded-circle">
+              <img alt="Logo" class="rounded-circle" style="height: 3rem;" src="/images/Logo_Develable.jpg">
+            </div>
+            <div class="mx-3" id="mysideTitle">Develable</div>
+          </a>
+
+          <hr class="sidebar-divider d-none d-md-block mysideDivider">
+
+          <li class="nav-item active mysideContent">
+            <a class="nav-link" href="#">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>공지 전송</span></a>
+          </li>
+
+          <li class="nav-item mysideContent">
+            <a class="nav-link" href="#logoutModal" data-toggle="modal" data-target="#logoutModal">
+              <i class="fas fa-fw fa-sign-out-alt"></i>
+              <span>로그아웃</span></a>
+          </li>
+
+          <hr class="sidebar-divider d-none d-md-block mysideDivider">
+        </ul>
+      </div>
+      <div id="mycontent">
+          <div id="myheader">
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top">
+
+              <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+              </button>
+
+              <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item dropdown no-arrow">
+                  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><strong><%= userCode %></strong> 님</span>
+                    <img class="img-profile rounded-circle" src="<%= userProfile %>">
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right shadow" aria-labelledby="userDropdown">
+                    <center>
+                    <div>
+                      <div class="col-12"><div style="height: 10px;"></div></div>
+                      <div class="col-12"><img class="img-profile mr-2 rounded-circle" style="height:5rem;" src="<%= userProfile %>"></div>
+                      <div class="col-12"><div style="height: 6px;"></div></div>
+                      <div class="col-12"><span class="mr-2 d-none d-lg-inline text-gray-600"><strong><%= userCode %></strong></span></div>
+                    </div>
+                    </center>
+                    <hr class="d-md-block">
+                      <a class="dropdown-item" href="#logoutModal" data-toggle="modal" data-target="#logoutModal">
+                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                        로그아웃
+                      </a>
+                  </div>
+                </li>
+        
+              </ul>
+        
+            </nav>
+          </div>
+          <div id="myform">
+              <div class="container-fluid" id="myformContent">
+
+                  <!-- 버전 정보 (추후 추가 할 듯. 아마도?) -->
+                  <!--<div class="row">
+                    <div class="col-lg-8 mb-4">
+                      <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                          <h6 class="m-0 font-weight-bold text-primary">버전 정보</h6>
+                        </div>
+                        <div class="card-body">
+                          <p>설치된 버전 : v1.0<br>최신 버전 : <font color="red">v1.1 (업데이트 필요)</font><br>지금 바로 업데이트 해 주세요! : <a href="https://github.com/develable/Develable-notice">Github에서 최신버전 다운받기</a></p>
+                          <p>설치된 버전 : v1.0<br>최신 버전 : <font color="green">v1.0 (최신버전)</font><br>Develable의 공지 시스템을 사용 해 주셔서 감사합니다!</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <form action="/sendNotice" method="POST">
+                    <div class="form-group row d-sm-flex justify-content-between" style="width: 100%;margin-left: 0px;margin-bottom: 0px;margin-right: 0px;display: block;">
+                      <div class="mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">공지 전송하기</h1>
+                      </div>
+                      <div align="right">
+                        <button class="btn btn-warning btn-split btn-icon-split" type="reset">
+                          <span class="icon text-white-50">
+                            <i class="far fa-window-close"></i>
+                          </span>
+                          <span class="text">초기화</span>
+                        </button>
+                        <button class="btn btn-primary btn-split btn-icon-split" type="submit">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-arrow-right"></i>
+                          </span>
+                          <span class="text">공지 전송</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="embedCheck" value="on" id="embed">
+                        <label class="custom-control-label" for="embed">엠베드 처리 유무</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <textarea type="text" class="form-control form-control-user" aria-describedby="send_message_help" placeholder="보낼 공지 메세지" rows="10" style="resize: vertical;" name="sendMessage"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control form-control-user" aria-describedby="bot_token_help" placeholder="전송할 봇의 토큰" name="botToken">
+                    </div>
+                  </form>
+                </div>
+          </div>
+          <div id="myfooter" class="sticky-footer bg-white">
+              <div class="container my-auto">
+                  <div class="copyright text-center my-auto" id="myfooterContent">
+                    <span>&copy; 2018-2020 <a href="https://tilto.kro.kr/">Tilto</a>, <a href="https://hwahyang.space">HwaHyang</a> of <a href="https://develable.xyz">Develable</a></span>
+                  </div>
+                </div>
+          </div>
+      </div>
+
+      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">정말이신가요?</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">로그아웃을 하시면 다시 로그인 하셔야 합니다!</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
+              <a class="btn btn-primary" href="/login">로그아웃</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="/vendor/jquery/jquery.min.js"></script>
+      <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+      <script src="/javascripts/sb-admin-2.min.js"></script>
+      <script src="/vendor/chart.js/Chart.min.js"></script>
+      <script src="/javascripts/demo/chart-pie-demo.js"></script>
+      <script src="/javascripts/demo/chart-area-demo.js"></script>
+  </body>
+</html>

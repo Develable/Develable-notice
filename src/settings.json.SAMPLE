@@ -1,0 +1,8 @@
+{
+    "onPort":3000,
+    "embedColor":"#ff0000",
+    "botToken":"",
+    "APIPW":"",
+    "allow_keywords":["notice", "공지", "알림", "announcement", "develable"],
+    "warn_keywords":["경고", "warn"]
+}

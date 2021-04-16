@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Develable 통합 공지 시스템 - 로그인</title>
+
+  <link rel="shortcut icon" href="/images/Logo_Develable.jpg">
+
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <link href="/stylesheets/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/demo.css">
+
+</head>
+
+<body class="bg-gradient-primary" oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+
+  <div class="container">
+
+    <div class="row justify-content-center">
+
+      <div class="col-xl-10 col-lg-12 col-md-9">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">돌아오신 것을 환영합니다!</h1>
+                  </div>
+                  <form class="user" name="mainForm" method="POST" action="/checkCode">
+                    <div class="form-group row">
+                      <div class="col-lg-9">
+                        <input type="text" class="form-control form-control-user" id="usrid" aria-describedby="usridhelp" placeholder="디스코드 ID (숫자)" name="usrid">
+                      </div>
+                      <div class="col-lg-3">
+                        <a href="javascript:void(0)" class="btn btn-primary btn-user btn-block" onclick="sendID();">발신</a>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-12">
+                        <input type="text" class="form-control form-control-user" id="code" aria-describedby="codehelp" placeholder="DM으로 발신된 인증번호" name="submitCode">
+                      </div>
+                    </div>
+                    <hr>
+                    <button class="btn btn-primary btn-user btn-block" type="submit">인증 / 로그인</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <form name="sendIDForm" method="POST" action="/sendCode" target="hiddenFrame">
+    <input type="hidden" name="DiscordID">
+  </form>
+  <div><iframe name="hiddenFrame" style="display:none"></iframe></div>
+  <script type="text/javascript">
+    function sendID() {
+      document.sendIDForm.DiscordID.value = document.mainForm.usrid.value;
+      document.sendIDForm.submit();
+    }
+  </script>
+
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/javascripts/sb-admin-2.min.js"></script>
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+  <script src="/javascripts/demo/chart-pie-demo.js"></script>
+  <script src="/javascripts/demo/chart-area-demo.js"></script>
+
+</body>
+
+</html>
