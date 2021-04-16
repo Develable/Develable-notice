@@ -13,7 +13,7 @@
     "debug": "^2.6.9",
     "discord.js": "^11.6.1",
     "ejs": "^2.6.2",
-    "electron": "^8.0.2",
+    "electron": "^9.4.0",
     "erlpack": "github:hammerandchisel/erlpack",
     "express": "^4.16.4",
     "http": "0.0.0",
